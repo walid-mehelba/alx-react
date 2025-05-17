@@ -9,6 +9,9 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
     clean: true,
   },
+resolve: {
+  extensions: ['.js', '.jsx'],
+},
   devtool: 'inline-source-map', // inline source map
   devServer: {
     static: path.resolve(__dirname, '../dist'),
@@ -18,6 +21,13 @@ module.exports = {
   },
   module: {
     rules: [
+  {
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader'
+      }
+    },
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],

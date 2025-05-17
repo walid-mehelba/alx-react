@@ -1,15 +1,7 @@
-import './style.css';
-import Logo from './alx_logo.png';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
 
-const root = document.getElementById('root');
-
-const img = document.createElement('img');
-img.src = Logo;
-img.alt = 'ALX Logo';
-
-const p = document.createElement('p');
-p.textContent = 'Welcome to Webpack Dashboard!';
-
-root.appendChild(img);
-root.appendChild(p);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
 
